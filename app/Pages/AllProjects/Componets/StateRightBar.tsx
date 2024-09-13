@@ -31,7 +31,7 @@ function Header() {
     return (
       <div className="flex justify-center items-center">
         <div className="w-40 h-40 bg-slate-100 mt-5 rounded-full flex items-center justify-center">
-          <div className="w-[86%] flex bg-white rounded-full">
+          <div className="w-[86%] flex justify-center items-center h-[86%] bg-white rounded-full">
             <span className="text-xl font-semibold text-orange-600 items-center">90%</span>
           </div>
         </div>

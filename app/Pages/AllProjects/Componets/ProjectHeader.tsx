@@ -1,7 +1,8 @@
 import React from "react";  // 6.9k (gzipped: 2.7k)
-import SearchIcon from "@mui/icons-material/Search";  // 66.8k (gzipped: 24.8k)
-import AddIcon from "@mui/icons-material/Add";  // 66.7k (gzipped: 24.7k)
+import SearchIcon from "@mui/icons-material/Search";  
+import AddIcon from "@mui/icons-material/Add"; 
 import MenuIcon from "@mui/icons-material/Menu";
+import { useContextApp } from "../../../contextApp";
 
 function ProjectsHeader() {
   return (
@@ -30,6 +31,7 @@ function SearchBar() {
   }
 
   function AddProjectButton() {
+    const { openSideBarObject: { setOpenSideBar, openSideBar } } = useContextApp();
     return (
       <div className="flex gap-3 items-center">
         <button
@@ -39,7 +41,10 @@ function SearchBar() {
           <AddIcon sx={{ fontSize: "22px" }} className="mt-[2px]" />
           <span className="max-sm:hidden">New Project</span>
         </button>
-        <MenuIcon className="text-slate-400 h-9 cursor-pointer hidden max-sm:block" />
+        <MenuIcon
+      onClick={() => setOpenSideBar(!openSideBar)}
+      className="text-slate-400 h-9 cursor-pointer hidden max-[940px]:block"
+    />
       </div>
     );
   }
